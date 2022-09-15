@@ -1,6 +1,7 @@
 ---
-- name: deploy node_exporter
+- name: deploy exporters for prometheus
   hosts: clients
   become: true
   roles:
     - { role: node_exporter, tags: node_exporter }
+    - { role: cadvisor, tags: cadvisor, when: "docker_monitoring|bool" }

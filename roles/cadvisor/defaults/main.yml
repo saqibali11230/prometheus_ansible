@@ -4,7 +4,7 @@ docker_monitoring: false
 cadvisor_version: v0.45.0
 
 # Cadvisor source path if offline
-cadvisor_binary_local_dir: "/home/aunox/Documents/pkgs/"
+cadvisor_binary_local_dir: "/home/pkgs/"
 
 # SHA256 checksum
 cadvisor_checksum: >-

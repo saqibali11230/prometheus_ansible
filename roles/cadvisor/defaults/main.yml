@@ -1,23 +1,23 @@
 ---
 # Version
 docker_monitoring: false
-cadvisor_version: v0.45.0
+cadvisor_version: v0.39.2
 
 # Cadvisor source path if offline
-cadvisor_binary_local_dir: "/home/pkgs/"
+cadvisor_binary_local_dir: ""
 
 # SHA256 checksum
 cadvisor_checksum: >-
-  9a2a0b69f58d932855c0af23b847cb9de8f8c32264f66f9fb5dcc8f359f34ccd
+  65109ea14132bce91bb2a92dc70248c705ba26fb2a7d55e295bf4192940a396c
 
 # Listen port
-cadvisor_port: 8080
+cadvisor_port: 8081
 
 # Base cadvisor url
 cadvisor_url: https://github.com/google/cadvisor/releases/download/
 
 # Download url
-cadvisor_download: "{{ cadvisor_url }}/{{ cadvisor_version }}/cadvisor-{{ cadvisor_version }}-linux-amd64"
+cadvisor_download: "{{ cadvisor_url }}/{{ cadvisor_version }}/cadvisor"
 #https://github.com/google/cadvisor/releases/download/v0.45.0/cadvisor-v0.45.0-linux-amd64
 
 # Extra runtime options

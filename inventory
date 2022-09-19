@@ -1,2 +1,2 @@
 [clients]
-127.0.0.1	docker_monitoring=true
+192.168.11.12	docker_monitoring=true

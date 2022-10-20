@@ -1,7 +1,7 @@
 ---
 # tasks file for cadvisor
 
-- name: cadvisor | create directories
+- name: Cadvisor | create directories
   become: true
   ansible.builtin.file:
     path: "{{ item }}"
@@ -14,7 +14,7 @@
   ansible.builtin.debug:
     var: cadvisor_download
 
-- name: cadvisor | download
+- name: Cadvisor | download
   become: true
   ansible.builtin.get_url:
     url: "{{ cadvisor_download }}"
@@ -24,7 +24,7 @@
     mode: u=rwx,g=rx,o=rx
   when: cadvisor_binary_local_dir | length == 0
 
-- name: cadvisor | propagate locally distributed cadvisor binary
+- name: Cadvisor | propagate locally distributed cadvisor binary
   ansible.builtin.copy:
     src: "{{ cadvisor_binary_local_dir }}/cadvisor-{{ cadvisor_version }}"
     dest: "/opt/cadvisor/cadvisor-{{ cadvisor_version }}"
@@ -35,7 +35,7 @@
   notify:
     - restart cadvisor
 
-- name: cadvisor | symlink
+- name: Cadvisor | symlink
   become: true
   ansible.builtin.file:
     src: "/opt/cadvisor/cadvisor-{{ cadvisor_version }}"
@@ -43,7 +43,7 @@
     force: true
     state: link
 
-- name: cadvisor | server systemd service
+- name: Cadvisor | server systemd service
   become: true
   ansible.builtin.template:
     dest: /etc/systemd/system/cadvisor.service
@@ -52,7 +52,7 @@
   notify:
     - restart cadvisor
 
-- name: cadvisor | enable and start server systemd
+- name: Cadvisor | enable and start server systemd
   become: true
   ansible.builtin.systemd:
     enabled: true

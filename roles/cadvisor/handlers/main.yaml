@@ -1,7 +1,7 @@
 ---
 # handlers file for cadvisor
 
-- name: restart cadvisor
+- name: Restart cadvisor
   become: true
   ansible.builtin.systemd:
     name: cadvisor

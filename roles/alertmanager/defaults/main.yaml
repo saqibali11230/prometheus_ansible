@@ -1,0 +1,7 @@
+---
+alertmanager_version: "0.24.0"
+alertmanager_url:
+  "https://github.com/prometheus/alertmanager/releases/download/v{{ alertmanager_version }}/\
+  alertmanager-{{ alertmanager_version }}.linux-amd64.tar.gz"
+
+alertmanager_bin_path: /usr/local/bin/alertmanager

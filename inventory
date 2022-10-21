@@ -1,6 +1,7 @@
 [clients]
-wfr-inf-applabapi-1     docker_monitoring=false         ansible_user=administrator
-wfr-applabdb-01     docker_monitoring=false         ansible_user=administrator
+127.0.0.1
+#wfr-inf-applabapi-1     docker_monitoring=false         ansible_user=administrator
+#wfr-applabdb-01     docker_monitoring=false         ansible_user=administrator
 ##qa-docker-mgr-01
 #172.31.0.10    docker_monitoring=true  ansible_user=sali
 ##qa-docker-mgr-02

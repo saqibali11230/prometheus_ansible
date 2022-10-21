@@ -1,0 +1,14 @@
+[Unit]
+Description=Calert Server for google workspaces
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Restart=always
+Type=simple
+ExecStart={{ calert_bin_path }} --config=/etc/calert/calert.toml
+
+[Install]
+WantedBy=multi-user.target

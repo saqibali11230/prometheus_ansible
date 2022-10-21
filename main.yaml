@@ -3,5 +3,8 @@
   hosts: clients
   become: true
   roles:
-    - { role: node_exporter, tags: node_exporter }
-    - { role: cadvisor, tags: cadvisor, when: "docker_monitoring|bool" }
+    # - { role: calert, tags: calert }
+     - { role: alertmanager, tags: alertmanager }
+    # - { role: prometheus, tags: prometheus }
+    # - { role: node_exporter, tags: node_exporter }
+    # - { role: cadvisor, tags: cadvisor, when: "docker_monitoring|bool" }

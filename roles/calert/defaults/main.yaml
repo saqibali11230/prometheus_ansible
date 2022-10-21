@@ -1,0 +1,11 @@
+---
+calert_version: "2.0.2"
+
+calert_url:
+  "https://github.com/mr-karan/calert/releases/download/v{{ calert_version }}/\
+  calert_{{ calert_version }}_linux_amd64.tar.gz"
+
+calert_bin_path: /usr/local/bin/calert.bin
+
+gspace_webhook: "https://chat.googleapis.com/v1/spaces/AAAAUcPCNHs/\
+                 messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Mun9pBTnOEmNESlGIxtmQvZeSzetwBXUja_-pZ_ScXE%3D"

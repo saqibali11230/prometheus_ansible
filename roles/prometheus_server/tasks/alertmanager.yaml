@@ -1,11 +1,4 @@
 ---
-- name: Create prometheus user
-  ansible.builtin.user:
-    name: prometheus
-    state: present
-    shell: /sbin/nologin
-  become_user: root
-
 - name: Create directories for alertmanager
   ansible.builtin.file:
     path: "{{ item }}"
@@ -43,19 +36,21 @@
     state: absent
     path: "/tmp/alertmanager-{{ alertmanager_version }}.linux-amd64.tar.gz"
 
-- name: Copy the alertmanager config file.
-  ansible.builtin.copy:
-    src: alertmanager.yml
-    dest: /etc/alertmanager/alertmanager.yml
-    owner: prometheus
-    group: prometheus
-    mode: 0755
-
-- name: Copy the alertmanager systemd unit file.
-  ansible.builtin.template:
-    src: alertmanager.service.j2
-    dest: /etc/systemd/system/alertmanager.service
-    mode: 0644
+- name: alertmanager configuration
+  block:
+    - name: Copy the alertmanager config file.
+      ansible.builtin.copy:
+        src: alertmanager.yml
+        dest: /etc/alertmanager/alertmanager.yml
+        owner: prometheus
+        group: prometheus
+        mode: 0755
+    
+    - name: Copy the alertmanager systemd unit file.
+      ansible.builtin.template:
+        src: alertmanager.service.j2
+        dest: /etc/systemd/system/alertmanager.service
+        mode: 0644
 
 - name: Start alertmanager
   ansible.builtin.systemd:

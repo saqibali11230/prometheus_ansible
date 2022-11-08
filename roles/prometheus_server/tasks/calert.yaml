@@ -1,11 +1,4 @@
 ---
-- name: Create prometheus user
-  ansible.builtin.user:
-    name: prometheus
-    state: present
-    shell: /sbin/nologin
-  become_user: root
-
 - name: Create directories for alertmanager
   ansible.builtin.file:
     path: "{{ item }}"
@@ -38,27 +31,29 @@
     state: absent
     path: "/tmp/calert"
 
-- name: Copy the calert config file.
-  ansible.builtin.template:
-    src: calert.toml.j2
-    dest: /etc/calert/calert.toml
-    owner: prometheus
-    group: prometheus
-    mode: 0755
-
-- name: Copy the msg template file.
-  ansible.builtin.copy:
-    src: message.tmpl
-    dest: /etc/calert/message.tmpl
-    owner: prometheus
-    group: prometheus
-    mode: 0755
-
-- name: Copy the prometheus systemd unit file.
-  ansible.builtin.template:
-    src: calert.service.j2
-    dest: /etc/systemd/system/calert.service
-    mode: 0644
+- name: calert configuration
+  block:
+    - name: Copy the calert config file.
+      ansible.builtin.template:
+        src: calert.toml.j2
+        dest: /etc/calert/calert.toml
+        owner: prometheus
+        group: prometheus
+        mode: 0755
+    
+    - name: Copy the msg template file.
+      ansible.builtin.copy:
+        src: message.tmpl
+        dest: /etc/calert/message.tmpl
+        owner: prometheus
+        group: prometheus
+        mode: 0755
+    
+    - name: Copy the prometheus systemd unit file.
+      ansible.builtin.template:
+        src: calert.service.j2
+        dest: /etc/systemd/system/calert.service
+        mode: 0644
 
 - name: Start alertmanager
   ansible.builtin.systemd:

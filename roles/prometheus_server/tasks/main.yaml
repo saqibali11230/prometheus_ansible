@@ -1,0 +1,9 @@
+---
+- name: Import prometheus task
+  ansible.builtin.import_tasks: prometheus.yaml
+
+- name: Import alertmanager task
+  ansible.builtin.import_tasks: alertmanager.yaml
+
+- name: Import calert task
+  ansible.builtin.import_tasks: calert.yaml

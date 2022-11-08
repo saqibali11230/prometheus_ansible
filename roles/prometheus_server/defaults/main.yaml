@@ -1,0 +1,27 @@
+---
+prometheus_version: "2.38.0"
+prometheus_url:
+  "https://github.com/prometheus/prometheus/releases/download/v{{ prometheus_version }}/\
+  prometheus-{{ prometheus_version }}.linux-amd64.tar.gz"
+
+prometheus_bin_path: /usr/local/bin/prometheus
+prometheus_port: 9090
+
+
+alertmanager_version: "0.24.0"
+alertmanager_url:
+  "https://github.com/prometheus/alertmanager/releases/download/v{{ alertmanager_version }}/\
+  alertmanager-{{ alertmanager_version }}.linux-amd64.tar.gz"
+
+alertmanager_bin_path: /usr/local/bin/alertmanager
+
+
+calert_version: "2.0.2"
+
+calert_url:
+  "https://github.com/mr-karan/calert/releases/download/v{{ calert_version }}/\
+  calert_{{ calert_version }}_linux_amd64.tar.gz"
+
+calert_bin_path: /usr/local/bin/calert.bin
+
+gspace_webhook: "random_link"

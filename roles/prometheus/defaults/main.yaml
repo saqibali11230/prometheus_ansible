@@ -1,9 +1,0 @@
----
-# See available releases: https://github.com/prometheus/node_exporter/releases/
-prometheus_version: "2.38.0"
-prometheus_url:
-  "https://github.com/prometheus/prometheus/releases/download/v{{ prometheus_version }}/\
-  prometheus-{{ prometheus_version }}.linux-amd64.tar.gz"
-
-prometheus_bin_path: /usr/local/bin/prometheus
-prometheus_port: 9090

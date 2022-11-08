@@ -1,6 +1,7 @@
 [clients]
-172.20.9.72	docker_monitoring=false	ansible_user=root
-172.20.9.84	docker_monitoring=false	ansible_user=root
+127.0.0.1	docker_monitoring=true
+#172.20.9.72	docker_monitoring=false	ansible_user=root
+#172.20.9.84	docker_monitoring=false	ansible_user=root
 #wfr-inf-applabapi-1     docker_monitoring=false         ansible_user=administrator
 #wfr-applabdb-01     docker_monitoring=false         ansible_user=administrator
 ##qa-docker-mgr-01

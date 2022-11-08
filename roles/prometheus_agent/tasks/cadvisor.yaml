@@ -1,6 +1,4 @@
 ---
-# tasks file for cadvisor
-
 - name: Cadvisor | create directories
   become: true
   ansible.builtin.file:

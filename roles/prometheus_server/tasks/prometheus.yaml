@@ -43,7 +43,7 @@
         group: prometheus
         mode: 0755
         remote_src: true
-    
+
     - name: Copy consoles
       ansible.builtin.copy:
         src: "/tmp/prometheus-{{ prometheus_version }}.linux-amd64/consoles"
@@ -51,7 +51,7 @@
         owner: prometheus
         group: prometheus
         mode: 0755
-    
+
     - name: Copy console_libraries
       ansible.builtin.copy:
         src: "/tmp/prometheus-{{ prometheus_version }}.linux-amd64/console_libraries"
@@ -80,7 +80,7 @@
         owner: prometheus
         group: prometheus
         mode: 0755
-    
+
     - name: Copy the alert config file.
       ansible.builtin.copy:
         src: "alert.rules.yml"
@@ -88,7 +88,7 @@
         owner: prometheus
         group: prometheus
         mode: 0755
-    
+
     - name: Copy the prometheus systemd unit file.
       ansible.builtin.template:
         src: prometheus.service.j2

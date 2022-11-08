@@ -36,7 +36,7 @@
     state: absent
     path: "/tmp/alertmanager-{{ alertmanager_version }}.linux-amd64.tar.gz"
 
-- name: alertmanager configuration
+- name: Alertmanager configuration
   block:
     - name: Copy the alertmanager config file.
       ansible.builtin.copy:
@@ -45,7 +45,7 @@
         owner: prometheus
         group: prometheus
         mode: 0755
-    
+
     - name: Copy the alertmanager systemd unit file.
       ansible.builtin.template:
         src: alertmanager.service.j2

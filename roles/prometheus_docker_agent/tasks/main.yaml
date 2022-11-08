@@ -22,7 +22,7 @@
     dest: "/opt/cadvisor/cadvisor-{{ cadvisor_version }}"
     force: false
     mode: u=rwx,g=rx,o=rx
-  when: cadvisor_binary_local_dir | length == 0
+  when: cadvisor_binary_local_dir | length == 0 and not ansible_check_mode
 
 - name: Cadvisor | propagate locally distributed cadvisor binary
   ansible.builtin.copy:
@@ -50,7 +50,8 @@
     src: systemd-system-cadvisor-service.j2
     mode: 0644
   notify:
-    - restart cadvisor
+    - Restart cadvisor
+  when: not ansible_check_mode
 
 - name: Cadvisor | enable and start server systemd
   become: true
@@ -59,3 +60,4 @@
     name: cadvisor.service
     state: started
     daemon_reload: true
+  when: not ansible_check_mode

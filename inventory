@@ -1,5 +1,5 @@
 [clients]
-172.20.10.12
+172.20.10.12	docker_monitoring=true
 #192.168.5.78   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
 #192.168.5.73   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
 #192.168.5.74   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners

@@ -1,0 +1,29 @@
+[clients]
+127.0.0.1	docker_monitoring=true
+#172.20.9.72	docker_monitoring=false	ansible_user=root
+#172.20.9.84	docker_monitoring=false	ansible_user=root
+#wfr-inf-applabapi-1     docker_monitoring=false         ansible_user=administrator
+#wfr-applabdb-01     docker_monitoring=false         ansible_user=administrator
+##qa-docker-mgr-01
+#172.31.0.10    docker_monitoring=true  ansible_user=sali
+##qa-docker-mgr-02
+#172.31.1.10    docker_monitoring=true  ansible_user=sali
+##qa-docker-mgr-03
+#172.31.2.10    docker_monitoring=true  ansible_user=sali
+#
+##qa-docker-wkr-01
+#172.31.0.20    docker_monitoring=true  ansible_user=sali
+##qa-docker-wkr-02
+#172.31.1.20    docker_monitoring=true  ansible_user=sali
+##qa-docker-wkr-03
+#172.31.2.20    docker_monitoring=true  ansible_user=sali
+#
+#
+##qa-dev-dt-tx-01
+#172.31.0.32    docker_monitoring=true  ansible_user=sali
+##qa-dev-dt-tx-02
+#172.31.0.33    docker_monitoring=true  ansible_user=sali
+##qa-dev-du-tx-01
+#172.31.0.34    docker_monitoring=true  ansible_user=sali
+##qa-dev-du-tx-02
+#172.31.0.35    docker_monitoring=true  ansible_user=sali

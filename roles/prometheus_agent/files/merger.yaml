@@ -1,0 +1,4 @@
+exporters:
+- url: http://localhost:9101/metrics
+- url: http://localhost:9102/metrics
+- url: http://localhost:9103/metrics

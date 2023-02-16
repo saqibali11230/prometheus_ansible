@@ -1,0 +1,63 @@
+---
+- name: Create directories for alertmanager
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: prometheus
+    group: prometheus
+    mode: 0755
+  with_items:
+    - /etc/calert
+    - /tmp/calert
+
+- name: Unarchive a file that needs to be downloaded
+  ansible.builtin.unarchive:
+    src: "{{ calert_url }}"
+    dest: /tmp/calert
+    mode: 0755
+    remote_src: true
+
+- name: Copy calert
+  ansible.builtin.copy:
+    src: "/tmp/calert/calert.bin"
+    dest: "{{ calert_bin_path }}"
+    owner: prometheus
+    group: prometheus
+    mode: 0755
+    remote_src: true
+
+- name: Delete unwanted files
+  ansible.builtin.file:
+    state: absent
+    path: "/tmp/calert"
+
+- name: Calert configuration
+  block:
+    - name: Copy the calert config file.
+      ansible.builtin.template:
+        src: calert.toml.j2
+        dest: /etc/calert/calert.toml
+        owner: prometheus
+        group: prometheus
+        mode: 0755
+
+    - name: Copy the msg template file.
+      ansible.builtin.copy:
+        src: message.tmpl
+        dest: /etc/calert/message.tmpl
+        owner: prometheus
+        group: prometheus
+        mode: 0755
+
+    - name: Copy the calert systemd unit file.
+      ansible.builtin.template:
+        src: calert.service.j2
+        dest: /etc/systemd/system/calert.service
+        mode: 0644
+
+- name: Start alertmanager
+  ansible.builtin.systemd:
+    state: started
+    name: calert
+    daemon_reload: true
+    enabled: true

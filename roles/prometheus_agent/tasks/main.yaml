@@ -1,0 +1,27 @@
+---
+- name: Import process_exporter task
+  ansible.builtin.import_tasks: process_exporter.yaml
+
+- name: Import node_exporter task
+  ansible.builtin.import_tasks: node_exporter.yaml
+
+- name: Import cadvisor task
+  ansible.builtin.include_tasks: cadvisor.yaml
+  when: docker_monitoring is defined and docker_monitoring|bool == True
+
+- name: Import exporter_merger task
+  ansible.builtin.import_tasks: exporter_merger.yaml
+
+# - name: Set prometheus config
+#   uri:
+#     url: http://localhost:8000/api/config
+#     method: POST
+#     body_format: json
+#     body:
+#       docker_monitoring: "{{ docker_monitoring }}"
+#       address: "{{ ansible_host }}"
+#       job: "{{ job }}"
+#   until: uri_output.status == 200
+#   retries: 2
+#   delay: 5
+#   register: uri_output

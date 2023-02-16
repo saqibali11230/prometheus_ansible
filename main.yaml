@@ -3,4 +3,4 @@
   hosts: all
   become: true
   roles:
-     - { role: prometheus_agent, tags: prometheus_server }
+     - { role: prometheus_agent, tags: prometheus_agent }

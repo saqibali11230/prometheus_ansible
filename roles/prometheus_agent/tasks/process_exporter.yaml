@@ -1,0 +1,49 @@
+---
+- name: Download and unarchive process_exporter.
+  ansible.builtin.unarchive:
+    src: "{{ process_exporter_url }}"
+    dest: /tmp
+    remote_src: true
+    mode: 0755
+
+- name: Move node_exporter binary into place.
+  ansible.builtin.copy:
+    src: "/tmp/process-exporter-{{ process_exporter_version }}.linux-amd64/process-exporter"
+    dest: "{{ process_exporter_bin_path }}"
+    mode: 0755
+    remote_src: true
+  when: not ansible_check_mode
+
+- name: Create directories for process-exporter
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - /etc/process-exporter
+
+- name: Copy config file for process_exporter
+  ansible.builtin.copy:
+    src: process-exporter.yaml
+    dest: /etc/process-exporter/process-exporter.yaml
+    mode: '0644'
+
+- name: Copy the node_exporter systemd unit file.
+  ansible.builtin.template:
+    src: process_exporter.service.j2
+    dest: /etc/systemd/system/process_exporter.service
+    mode: 0644
+
+- name: Reload systemd daemon if unit file is changed.
+  ansible.builtin.systemd:
+    daemon_reload: true
+  notify: Restart Process_exporter
+
+- name: Ensure process_exporter is running and enabled at boot.
+  ansible.builtin.service:
+    name: process_exporter
+    state: "started"
+    enabled: true
+  when: not ansible_check_mode

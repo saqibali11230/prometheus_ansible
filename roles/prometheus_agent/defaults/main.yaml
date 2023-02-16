@@ -25,7 +25,7 @@ cadvisor_checksum: >-
   65109ea14132bce91bb2a92dc70248c705ba26fb2a7d55e295bf4192940a396c
 
 # Listen port
-cadvisor_port: 8081
+cadvisor_port: 9101
   # Base cadvisor url
 cadvisor_url: https://github.com/google/cadvisor/releases/download/
 
@@ -37,3 +37,11 @@ cadvisor_download: "{{ cadvisor_url }}/{{ cadvisor_version }}/cadvisor"
 
 # Extra runtime options
 cadvisor_runtime_options: ""
+
+# Process exporter
+process_exporter_version: '0.7.10'
+process_exporter_url: "https://github.com/ncabatoff/process-exporter/releases/download/\
+  v{{ process_exporter_version }}/process-exporter-{{ process_exporter_version }}.linux-amd64.tar.gz"
+
+process_exporter_bin_path: /usr/local/bin/process_exporter
+process_exporter_port: 9103

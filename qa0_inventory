@@ -1,0 +1,47 @@
+#172.20.5.74		job=dev1-forgerock      docker_monitoring=false
+#172.20.5.89		job=dev1-forgerock      docker_monitoring=false
+#172.20.4.7 		job=dev1-forgerock      docker_monitoring=false
+#172.20.4.45		job=dev1-forgerock      docker_monitoring=false
+#172.20.4.22		job=dev1-forgerock      docker_monitoring=false
+#172.20.4.48		job=dev1-forgerock      docker_monitoring=false
+#172.20.4.24		job=dev1-forgerock      docker_monitoring=false
+#172.20.4.36		job=dev1-forgerock      docker_monitoring=false
+#
+#172.31.0.30		job=dev1-forgerock      docker_monitoring=false
+#172.31.0.31		job=dev1-forgerock      docker_monitoring=false
+#172.31.0.32		job=dev1-forgerock      docker_monitoring=false
+#172.31.0.33		job=dev1-forgerock      docker_monitoring=false
+#172.31.0.34		job=dev1-forgerock      docker_monitoring=false
+#172.31.0.35		job=dev1-forgerock      docker_monitoring=false
+#
+#
+#
+#172.31.0.36		job=dev1-am		docker_monitoring=false
+#172.31.0.37		job=dev1-am		docker_monitoring=false
+
+172.31.0.10		job=dev1-swarm-ec2      docker_monitoring=true
+172.31.1.10		job=dev1-swarm-ec2      docker_monitoring=true
+172.31.2.10		job=dev1-swarm-ec2      docker_monitoring=true
+
+172.31.0.20		job=dev1-swarm-ec2      docker_monitoring=true
+172.31.1.20		job=dev1-swarm-ec2      docker_monitoring=true
+172.31.2.20		job=dev1-swarm-ec2      docker_monitoring=true
+
+
+
+172.20.6.11		job=dev1-swarm-ec2      docker_monitoring=true
+172.20.6.13		job=dev1-swarm-ec2      docker_monitoring=true
+172.20.6.24		job=dev1-swarm-ec2      docker_monitoring=true
+172.20.6.26		job=dev1-swarm-ec2      docker_monitoring=true
+172.20.6.41		job=dev1-swarm-ec2      docker_monitoring=true
+
+
+172.20.5.137		job=dev1-swarm-ec2      docker_monitoring=true
+172.20.5.173		job=dev1-swarm-ec2      docker_monitoring=true
+172.20.5.214		job=dev1-swarm-ec2      docker_monitoring=true
+
+#172.20.4.10		job=dev1-stun           docker_monitoring=false
+#172.20.4.40		job=dev1-stun           docker_monitoring=false
+#172.20.4.58		job=dev1-stun           docker_monitoring=false
+#172.20.4.80		job=dev1-stun           docker_monitoring=false
+

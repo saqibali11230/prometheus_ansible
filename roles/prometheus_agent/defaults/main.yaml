@@ -33,12 +33,6 @@ cadvisor_url: https://github.com/google/cadvisor/releases/download/
 cadvisor_bin_path: /usr/local/bin/cadvisor
 # Download url
 cadvisor_download: "{{ cadvisor_url }}/{{ cadvisor_version }}/cadvisor"
-# https://github.com/google/cadvisor/releases/download/v0.39.2/cadvisor
-# https://github.com/google/cadvisor/releases/download/v0.45.0/cadvisor-v0.45.0-linux-amd64
-
-# Extra runtime options
-cadvisor_runtime_options: ""
-
 
 # Process exporter
 process_exporter_version: '0.7.10'

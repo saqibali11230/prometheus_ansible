@@ -1,13 +1,4 @@
 ---
-# - name: Cadvisor | create directories
-#   become: true
-#   ansible.builtin.file:
-#     path: "{{ item }}"
-#     state: directory
-#     mode: 0755
-#   with_items:
-#     - /opt/cadvisor
-
 - name: Cadvisor | download
   become: true
   ansible.builtin.get_url:
@@ -29,19 +20,11 @@
   notify:
     - restart cadvisor
 
-# - name: Cadvisor | symlink
-#   become: true
-#   ansible.builtin.file:
-#     src: "/opt/cadvisor/cadvisor-{{ cadvisor_version }}"
-#     path: /opt/cadvisor/cadvisor
-#     force: true
-#     state: link
-
 - name: Cadvisor | server systemd service
   become: true
   ansible.builtin.template:
     dest: /etc/systemd/system/cadvisor.service
-    src: systemd-system-cadvisor-service.j2
+    src: cadvisor.service.j2
     mode: 0644
   notify:
     - Restart cadvisor

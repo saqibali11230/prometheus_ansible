@@ -1,44 +1,50 @@
 [clients]
-172.20.10.12	docker_monitoring=true
-#192.168.5.78   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.73   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.74   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.77   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.60   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.175  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.174  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.147  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
-#192.168.5.148  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+172.20.9.148    docker_monitoring=true
+172.20.9.182    docker_monitoring=true
+172.20.9.199    docker_monitoring=true
+# 172.20.10.14  docker_monitoring=true
+# 172.20.10.24  docker_monitoring=true
+# 172.20.10.26  docker_monitoring=true
+# 172.20.10.42  docker_monitoring=true
+# 192.168.5.78   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.73   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.74   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.77   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.60   docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.175  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.174  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.147  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
+# 192.168.5.148  docker_monitoring=false ansible_user=sali@corp.mutualink.net    job=qa1-git-runners
 
-#192.168.8.24   docker_monitoring=false ansible_user=sali       job=qa1-git-runners
-#192.168.5.107  docker_monitoring=false ansible_user=sali
-#172.20.9.72    docker_monitoring=false ansible_user=root
-#172.20.8.25    docker_monitoring=false ansible_user=root       job=qa1-forgerock
-#172.20.8.44    docker_monitoring=false ansible_user=root       job=qa1-forgerock
+# 192.168.8.24   docker_monitoring=false ansible_user=sali       job=qa1-git-runners
+# 192.168.5.107  docker_monitoring=false ansible_user=sali
+# 172.20.9.72    docker_monitoring=false ansible_user=root
+# 172.20.8.25    docker_monitoring=false ansible_user=root       job=qa1-forgerock
+# 172.20.8.44    docker_monitoring=false ansible_user=root       job=qa1-forgerock
 
-#172.20.8.25
-#wfr-inf-applabapi-1     docker_monitoring=false         ansible_user=administrator
-#wfr-applabdb-01     docker_monitoring=false         ansible_user=administrator
-##qa-docker-mgr-01
-#172.31.0.10    docker_monitoring=true  ansible_user=sali
-##qa-docker-mgr-02
-#172.31.1.10    docker_monitoring=true  ansible_user=sali
-##qa-docker-mgr-03
-#172.31.2.10    docker_monitoring=true  ansible_user=sali
+# 172.20.8.25
+# wfr-inf-applabapi-1     docker_monitoring=false         ansible_user=administrator
+# wfr-applabdb-01     docker_monitoring=false         ansible_user=administrator
+# #qa-docker-mgr-01
+# 172.31.0.10    docker_monitoring=true  ansible_user=sali
+# #qa-docker-mgr-02
+# 172.31.1.10    docker_monitoring=true  ansible_user=sali
+# #qa-docker-mgr-03
+# 172.31.2.10    docker_monitoring=true  ansible_user=sali
 #
-##qa-docker-wkr-01
-#172.31.0.20    docker_monitoring=true  ansible_user=sali
-##qa-docker-wkr-02
-#172.31.1.20    docker_monitoring=true  ansible_user=sali
-##qa-docker-wkr-03
-#172.31.2.20    docker_monitoring=true  ansible_user=sali
+# #qa-docker-wkr-01
+# 172.31.0.20    docker_monitoring=true  ansible_user=sali
+# #qa-docker-wkr-02
+# 172.31.1.20    docker_monitoring=true  ansible_user=sali
+# #qa-docker-wkr-03
+# 172.31.2.20    docker_monitoring=true  ansible_user=sali
 #
 #
-##qa-dev-dt-tx-01
-#172.31.0.32    docker_monitoring=true  ansible_user=sali
-##qa-dev-dt-tx-02
-#172.31.0.33    docker_monitoring=true  ansible_user=sali
-##qa-dev-du-tx-01
-#172.31.0.34    docker_monitoring=true  ansible_user=sali
-##qa-dev-du-tx-02
-#172.31.0.35    docker_monitoring=true  ansible_user=sali
+# #qa-dev-dt-tx-01
+# 172.31.0.32    docker_monitoring=true  ansible_user=sali
+# #qa-dev-dt-tx-02
+# 172.31.0.33    docker_monitoring=true  ansible_user=sali
+# #qa-dev-du-tx-01
+# 172.31.0.34    docker_monitoring=true  ansible_user=sali
+# #qa-dev-du-tx-02
+# 172.31.0.35    docker_monitoring=true  ansible_user=sali

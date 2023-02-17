@@ -7,7 +7,7 @@ node_exporter_binary_local_dir: ""
 node_exporter_bin_path: /usr/local/bin/node_exporter
 
 node_exporter_host: "localhost"
-node_exporter_port: 9101
+node_exporter_port: 9102
 node_exporter_options: ''
 
 node_exporter_state: started
@@ -25,7 +25,7 @@ cadvisor_checksum: >-
   65109ea14132bce91bb2a92dc70248c705ba26fb2a7d55e295bf4192940a396c
 
 # Listen port
-cadvisor_port: 9102
+cadvisor_port: 9101
   # Base cadvisor url
 cadvisor_url: https://github.com/google/cadvisor/releases/download/
 

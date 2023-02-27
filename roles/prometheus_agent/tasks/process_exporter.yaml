@@ -6,7 +6,7 @@
     remote_src: true
     mode: 0755
 
-- name: Move node_exporter binary into place.
+- name: Move process_exporter binary into place.
   ansible.builtin.copy:
     src: "/tmp/process-exporter-{{ process_exporter_version }}.linux-amd64/process-exporter"
     dest: "{{ process_exporter_bin_path }}"
@@ -30,7 +30,7 @@
     dest: /etc/process-exporter/process-exporter.yaml
     mode: '0644'
 
-- name: Copy the node_exporter systemd unit file.
+- name: Copy the process_exporter systemd unit file.
   ansible.builtin.template:
     src: process_exporter.service.j2
     dest: /etc/systemd/system/process_exporter.service

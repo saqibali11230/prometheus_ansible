@@ -1,7 +1,22 @@
 [clients]
-172.20.9.148    docker_monitoring=true
-172.20.9.182    docker_monitoring=true
-172.20.9.199    docker_monitoring=true
+wfr-360s-ttn100	docker_monitoring=true
+wfr-dev-fema-3	docker_monitoring=true
+# 192.168.11.27	docker_monitoring=false
+# 192.168.11.28	docker_monitoring=false
+# 192.168.11.29	docker_monitoring=false
+# 172.20.9.72    docker_monitoring=false
+# 172.20.9.84    docker_monitoring=false
+# 172.20.8.8    docker_monitoring=false
+# 172.20.8.38    docker_monitoring=false
+# 172.20.8.25    docker_monitoring=false
+# 172.20.8.44    docker_monitoring=false
+# 172.20.8.4    docker_monitoring=false
+# 172.20.8.56    docker_monitoring=false
+# 172.20.8.36    docker_monitoring=false
+# 172.20.8.74    docker_monitoring=false
+# 172.20.9.148    docker_monitoring=true
+# 172.20.9.182    docker_monitoring=true
+# 172.20.9.199    docker_monitoring=true
 # 172.20.10.14  docker_monitoring=true
 # 172.20.10.24  docker_monitoring=true
 # 172.20.10.26  docker_monitoring=true

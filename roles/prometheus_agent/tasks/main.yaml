@@ -12,16 +12,17 @@
 - name: Import exporter_merger task
   ansible.builtin.import_tasks: exporter_merger.yaml
 
-# - name: Set prometheus config
-#   uri:
-#     url: http://localhost:8000/api/config
-#     method: POST
-#     body_format: json
-#     body:
-#       docker_monitoring: "{{ docker_monitoring }}"
-#       address: "{{ ansible_host }}"
-#       job: "{{ job }}"
-#   until: uri_output.status == 200
-#   retries: 2
-#   delay: 5
-#   register: uri_output
+- name: Set prometheus config
+  ansible.builtin.uri:
+    url: http://wfr-mondb-01.corp.mutualink.net:8000/api/config
+    method: POST
+    body_format: json
+    body:
+      docker_monitoring: "{{ docker_monitoring }}"
+      address: "{{ inventory_hostname }}"
+      job: "{{ job | default(omit) }}"
+  until: uri_output.status == 200
+  retries: 2
+  delay: 5
+  register: uri_output
+  delegate_to: localhost
